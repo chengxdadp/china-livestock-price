@@ -1,0 +1,182 @@
+$(function () {
+	// 轮播
+	var bannerswiper = new Swiper('.swiper_video', {
+		// paginationClickable :true,
+		slidesPerView: 3,
+		loop: true,
+		autoplay: false,
+		// autoplayDisableOnInteraction:false,
+		// speed:500,
+		// resizeReInit : true,
+		observer: true,//修改swiper自己或子元素时，自动初始化swiper
+		observeParents: true,//修改swiper的父元素时，自动初始化swiper
+		
+		//默认字号
+	})
+	$('.swiper_video .arrow-left').on('click', function (e) {
+		e.preventDefault()
+		bannerswiper.swipePrev()
+	})
+	$('.swiper_video .arrow-right').on('click', function (e) {
+		e.preventDefault()
+		bannerswiper.swipeNext()
+	})
+
+	//手风琴
+	$(".sfq-slide-con .slide-item").on("click", function () {
+		$(this).addClass("on").siblings().removeClass("on");
+	});
+
+	// 致富天地
+	$(".rich_nav ul li").hover(function () {
+		$(this).addClass("active").siblings().removeClass("active")
+		var i = $(this).index();
+		$(".rich_cont_wrap .rich_cont").eq(i).addClass("selected").siblings().removeClass("selected")
+	})
+	// 农业课堂
+	$(".agricul_list1 .agricul_com").on("click", function () {
+		$(this).addClass("on").siblings().removeClass("on");
+	});
+	// 气象农业
+	$(".agricul_list2 .agricul_com").on("click", function () {
+		$(this).addClass("on").siblings().removeClass("on");
+	});
+
+	//专家团队
+	$(".expert_title_list ul li").hover(function () {
+		$(this).addClass("active").siblings().removeClass("active")
+		var i = $(this).index();
+		$(".expert_title_list .more").eq(i).addClass("active").siblings(".expert_title_list .more").removeClass("active");
+		$(".expert_lists_wrap .expert_lists").eq(i).addClass("selected").siblings().removeClass("selected")
+	})
+
+
+	// 生产轮播
+	var newsswiper = new Swiper('.trends_swiper', {
+		slidesPerView: 1,
+		loop: true,
+		autoplay: 6000,
+		autoplayDisableOnInteraction: false,
+		speed: 500,
+		resizeReInit: true,
+		paginationClickable: true,
+		observer: true,//修改swiper自己或子元素时，自动初始化swiper
+		observeParents: true,//修改swiper的父元素时，自动初始化swiper
+		onSwiperCreated: function (swiper) {
+			$('.trends_left .pageState').html("<span class='t1'>" + (swiper.activeLoopIndex + 1) + "</span>/<span class='t2'>" + (swiper.slidesGrid.length - 2) + "</span>");
+		},
+		onSlideChangeStart: function (swiper) {
+			$('.trends_left .pageState').html("<span class='t1'>" + (swiper.activeLoopIndex + 1) + "</span>/<span class='t2'>" + (swiper.slidesGrid.length - 2) + "</span>");
+		}
+	})
+	$('.trends_left .arrow-left').on('click', function (e) {
+		e.preventDefault()
+		newsswiper.swipePrev()
+	})
+	$('.trends_left .arrow-right').on('click', function (e) {
+		e.preventDefault()
+		newsswiper.swipeNext()
+	})
+	$('.trends_swiper').hover(function () {
+		newsswiper.stopAutoplay();
+	}, function () {
+		newsswiper.startAutoplay();
+	});
+
+
+	// 视频详情页字体大小调整
+
+
+	
+	$(".f16").click(function () {
+		$(".content_body_box ").css("font-size", "16px").css("line-height", "32px");
+		$(".content_body_box p").css("font-size", "16px").css("line-height", "32px");
+				$(".content_body_box p font").css("font-size", "16px").css("line-height", "32px");
+		$(".content_body_box div").css("font-size", "16px").css("line-height", "32px");
+		$(".content_body_box div span").css("font-size", "16px").css("line-height", "32px");
+		$(".content_body_box p span").css("font-size", "16px").css("line-height", "32px");
+		$(".content_body_box .tit_p").css("font-size", "18px").css("line-height", "36px");
+		$(this).addClass('active').siblings().removeClass('active');
+	});
+	$(".f18").click(function () {
+		$(".content_body_box ").css("font-size", "18px").css("line-height", "36px");
+		$(".content_body_box p").css("font-size", "18px").css("line-height", "36px");
+				$(".content_body_box p font").css("font-size", "18px").css("line-height", "36px");
+		$(".content_body_box div").css("font-size", "18px").css("line-height", "36px");
+		$(".content_body_box div span").css("font-size", "18px").css("line-height", "36px");
+		$(".content_body_box p span").css("font-size", "18px").css("line-height", "36px");
+		$(".content_body_box .tit_p").css("font-size", "20px").css("line-height", "40px");
+		$(this).addClass('active').siblings().removeClass('active');
+	});
+	$(".f20").click(function () {
+		$(".content_body_box ").css("font-size", "20px").css("line-height", "40px");
+		$(".content_body_box p").css("font-size", "20px").css("line-height", "40px");
+				$(".content_body_box p font").css("font-size", "20px").css("line-height", "40px");
+		$(".content_body_box div").css("font-size", "20px").css("line-height", "40px");
+		$(".content_body_box div span").css("font-size", "20px").css("line-height", "40px");
+		$(".content_body_box p span").css("font-size", "20px").css("line-height", "40px");
+		$(".content_body_box .tit_p").css("font-size", "22px").css("line-height", "44px");
+		$(this).addClass('active').siblings().removeClass('active');
+	});
+	$(".f22").click(function () {
+		$(".content_body_box ").css("font-size", "22px").css("line-height", "44px");
+		$(".content_body_box p").css("font-size", "22px").css("line-height", "44px");
+				$(".content_body_box p font").css("font-size", "22px").css("line-height", "44px");
+		$(".content_body_box div").css("font-size", "22px").css("line-height", "44px");
+		$(".content_body_box div span").css("font-size", "22px").css("line-height", "44px");
+		$(".content_body_box p span").css("font-size", "22px").css("line-height", "44px");
+		$(".content_body_box .tit_p").css("font-size", "24px").css("line-height", "48px");
+		$(this).addClass('active').siblings().removeClass('active');
+	});
+
+	//农业品种
+	$(".breed_hearder_right ul li").hover(function () {
+		$(this).addClass("active").siblings().removeClass("active")
+		var i = $(this).index();
+		$(".breed_hearder_right .more").eq(i).addClass("active").siblings(".breed_hearder_right .more").removeClass("active");
+		$(".breed_list").eq(i).addClass("selected").siblings(".breed_list").removeClass("selected");
+	})
+
+
+	//科技推广
+	$(".guidance_tit_text ul li").hover(function () {
+		$(this).addClass("active").siblings().removeClass("active")
+		var i = $(this).index();
+		$(".guidance_tit .more").eq(i).addClass("active").siblings(".guidance_tit .more").removeClass("active");
+		$(".guidance_list ul").eq(i).addClass("selected").siblings(".guidance_list ul").removeClass("selected");
+	})
+
+	
+	//农业品种
+	$(".detection_hearder_right ul li").hover(function () {
+		$(this).addClass("active").siblings().removeClass("active")
+		var i = $(this).index();
+		$(".detection_hearder_right .more").eq(i).addClass("active").siblings(".detection_hearder_right .more").removeClass("active");
+		$(".detection_list").eq(i).addClass("selected").siblings(".detection_list").removeClass("selected");
+	})
+	
+	// 生产
+	var sc_mySwiper = new Swiper('.sc_main_nypz_js',{
+		loop:true,
+		grabCursor: true,
+		slidesPerView: 9,
+	})
+	$('.sc_main_prev').on('click', function(e){
+		e.preventDefault()
+		sc_mySwiper.swipePrev()
+	})
+	$('.sc_main_next').on('click', function(e){
+		e.preventDefault()
+		sc_mySwiper.swipeNext()
+	})
+
+
+		//数据-供需形势
+		$(".supply_ul li").hover(function () {
+			$(this).addClass("active").siblings().removeClass("active")
+			var i = $(this).index();
+			$(".trends_tit_supply .more").eq(i).addClass("active").siblings(".trends_tit_supply .more").removeClass("active");
+			$(".trends_list_supply ul").eq(i).addClass("selected").siblings(".trends_list_supply ul").removeClass("selected");
+		})
+})
+

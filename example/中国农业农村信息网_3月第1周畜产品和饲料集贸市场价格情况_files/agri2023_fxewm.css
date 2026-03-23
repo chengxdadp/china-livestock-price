@@ -1,0 +1,35 @@
+.code-box {
+	width: 270px;
+	border: 1px solid #ddd;
+	background-color: #ffffff;
+	padding: 10px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-top: -163px;
+	margin-left: -142px;
+	display: none;
+}
+.code-box .close{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.code-box h5 {
+	margin: 0;
+}
+
+.code-box p {
+	font-size: 13px;
+	line-height: 22px;
+	margin: 0;
+	color: #555;
+}
+
+#div_div {
+	width: 200px;
+	height: 200px;
+	margin: 20px auto
+}

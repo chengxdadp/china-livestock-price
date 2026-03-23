@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+
+
+.nxhd {
+    background: url(icon_nxhd20251226.png) no-repeat;
+    padding-left: 25px;
+    background-size: 18px;
+    border-right: 1px #F8902F solid;
+    padding-right: 20px;
+	 background-position-y: center;
+}
+
+
+@media screen and (max-width: 1920px) {
+   
+
+    .nxhd {
+        background: url(icon_nxhd20251226.png) no-repeat;
+        padding-left: 27px;
+        background-size: 27px;
+        border-right: 1px #F8902F solid;
+        padding-right: 17px;
+		 margin-left: 5px;
+        background-position-y: center;
+    }
+
+   
+
+}
+
+@media screen and (max-width: 1440px) {
+    
+
+    .nxhd {
+		background: url(icon_nxhd20251226.png) no-repeat;
+        padding-left: 27px;
+        background-size: 27px;
+        border-right: 1px #F8902F solid;
+        padding-right: 15px;
+        margin-left: 5px;
+		 background-position-y: center;
+    }
+    
+
+}

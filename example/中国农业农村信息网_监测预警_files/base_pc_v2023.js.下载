@@ -1,0 +1,52 @@
+$(function(){
+	$(window).resize(function() {
+		footer_web_link()
+	});
+	footer_web_link();
+	function footer_web_link(){
+		var thisWidth = $(".footerTopUl .layout").css('width')
+		var footerTopUlH = "112px";
+		if(thisWidth=='1400px'){
+			footerTopUlH = "150px"
+		}
+		if(thisWidth=='1200px'){
+			footerTopUlH = "130px"
+		}
+		$(".footer_web_linkLi2").hover(function(){
+			$(".footerTopUl").stop().animate({height:footerTopUlH});
+			$(".footer_web_linkLi2").removeClass('active')
+			$(this).addClass('active')
+			$(".footerTopUl ul").removeClass('active')
+			$(".footerTopUl ul").eq($(this).index()).addClass('active')
+		},function(){
+			$(".footer_web_linkLi2").removeClass('active')
+			$(".footerTopUl").stop().animate({height:"0"});
+		})
+		$(".footerTopUl .layout").hover(function(){
+			$(".footerTopUl").stop().animate({height:footerTopUlH});
+		},function(){
+			$(".footer_web_linkLi2").removeClass('active')
+			$(".footerTopUl").stop().animate({height:"0"});
+		})
+	};
+  $('.footer_backTop').click(function(){
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop > 0) {
+      $('html,body').animate({ scrollTop: '0px' }, 800);
+    }
+  });
+
+if($(window).scrollTop() === 0){
+  		$(".footer_backTop").hide();
+  	}else{
+  		$(".footer_backTop").show();
+  	}
+
+  $(window).scroll(function(){
+  	if($(window).scrollTop() === 0){
+  		$(".footer_backTop").hide();
+  	}else{
+  		$(".footer_backTop").show();
+  	}
+  })
+})
