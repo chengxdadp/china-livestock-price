@@ -50,3 +50,4 @@ jobs:
           git commit -m "Update price data"
           git push
 
+
